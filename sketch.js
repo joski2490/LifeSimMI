@@ -7,6 +7,7 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     createVehicles();
     initParticles();
+    strokeWeight(3);
 }
 function keyPressed(){
 	if (keyCode===BACKSPACE)
