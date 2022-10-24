@@ -98,7 +98,7 @@ function Vehicle(x, y, dna) {
         let theta = this.velocity.heading() + PI / 2;
         let green = color(0, 255, 0);
         let red = color(255, 0, 0);
-        let actCol = lerpColor(red, green, this.health);
+        let actCol = green;//lerpColor(red, green, this.health);
         fill(actCol);
         stroke(actCol);
         push();
