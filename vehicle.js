@@ -4,7 +4,7 @@ function Vehicle(x, y, dna) {
     this.acceleration = createVector(0, 0);
     this.velocity = createVector(0, -2);
     this.position = createVector(x, y);
-    this.maxspeed = 5;
+    this.maxspeed = 8;
     this.maxforce = 0.4;
     this.r = 4;
     this.health = 1;
@@ -90,15 +90,16 @@ function Vehicle(x, y, dna) {
         //this.applyForce(steer);
         return steer;
     }
+    /*
     this.dead = () => {
         return (this.health < 0);
-    }
+    }*/
 
     this.display = () => {
         let theta = this.velocity.heading() + PI / 2;
         let green = color(0, 255, 0);
         let red = color(255, 0, 0);
-        let actCol = green;//lerpColor(red, green, this.health);
+        let actCol = lerpColor(red, green, this.health);
         fill(actCol);
         stroke(actCol);
         push();
@@ -149,6 +150,7 @@ function createVehicles() {
         vehicles[i] = new Vehicle(random(width), random(height));
     }
 }
+
 function removeVehicles(pool) {
     vehicles = [];
     for (let i = 0; i < vehicleNum; i++) {
@@ -157,7 +159,7 @@ function removeVehicles(pool) {
         let dna = [];
         for (let i = 0; i < 4; i++) {
             let v = random(1) > 0.5 ? dna1[i] : dna2[i]
-            dna.push(v);
+            dna.push(v) ;
         }
         if (random(1) < 0.1) {
             let ind = Math.floor(random(4));
