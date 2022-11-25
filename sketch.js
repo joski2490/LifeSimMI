@@ -3,6 +3,7 @@ let debug=0;
 let gen=1;
 let pause=0;
 let framesinc=1;
+let Data=[];
 function setup() {
     createCanvas(windowWidth, windowHeight);
     createVehicles();
@@ -32,16 +33,29 @@ function draw() {
     displayFood();
 
     Frames+=framesinc;
-    if (Frames==500)
+    if (Frames==800)
     {
         Frames=0;
         gen+=1;
         CalculateFitness(vehicles);
+        let foodno=food.length;
+        let poisno=poison.length;
+        let newGraphData={gen:gen,foodno:foodno,poisno:poisno};
+        Data.push(newGraphData);
         let pool=MatingPool(vehicles);
         //console.log(pool);
+        /*for(let i=vehicles.length-1;i>=0;i--)
+        {
+            console.log(vehicles[i].health);
+        }*/
         removeVehicles(pool);
         removeParticles();
         initParticles();
+        if (gen==31)
+        {
+            noLoop();
+            init_graph();
+        }
 
     }
     //console.log(Frames);
