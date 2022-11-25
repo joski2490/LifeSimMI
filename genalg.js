@@ -26,6 +26,5 @@ function CalculateFitness(vehicles) {
         vehicles[i].health=(vehicles[i].health-minFit)/(maxFit-minFit+1);
         //console.log(vehicles[i].health);
     }
-    console.log(maxFit);
-
+    
 }
