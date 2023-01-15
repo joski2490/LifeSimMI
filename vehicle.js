@@ -1,5 +1,5 @@
 let vehicles = [];
-let vehicleNum = 10;
+let vehicleNum = 20;
 function Vehicle(x, y, dna) {
     this.acceleration = createVector(0, 0);
     this.velocity = createVector(0, -2);
@@ -24,8 +24,8 @@ function Vehicle(x, y, dna) {
     }
     this.update = () => {
         this.health -= 0.001;
-        this.velocity.add(this.acceleration);
-        this.velocity.limit(this.maxspeed);
+        this.velocity.add((this.acceleration)*2);
+        this.velocity.limit((this.maxspeed)*2);
         this.position.add(this.velocity);
         this.acceleration.mult(0);
     }
