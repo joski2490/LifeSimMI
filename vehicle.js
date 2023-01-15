@@ -4,8 +4,8 @@ function Vehicle(x, y, dna) {
     this.acceleration = createVector(0, 0);
     this.velocity = createVector(0, -2);
     this.position = createVector(x, y);
-    this.maxspeed = 32; //8
-    this.maxforce = 1.6; //0.4
+    this.maxspeed = 8; //8
+    this.maxforce = 0.4; //0.4
     this.r = 4;
     this.health = 1;
     this.dna = [];
