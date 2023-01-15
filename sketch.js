@@ -2,13 +2,13 @@ let Frames=0;
 let debug=0;
 let gen=1;
 let pause=0;
-let framesinc=2;
+let framesinc=5;
 let Data=[];
 function setup() {
     createCanvas(windowWidth, windowHeight);
     createVehicles();
     initParticles();
-    strokeWeight(3);
+    strokeWeight(6);
 }
 function keyPressed(){
 	if (keyCode===BACKSPACE)
@@ -33,7 +33,7 @@ function draw() {
     displayFood();
 
     Frames+=framesinc;
-    if (Frames==200)
+    if (Frames==1000)
     {
         Frames=0;
         gen+=1;
