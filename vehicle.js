@@ -4,17 +4,17 @@ function Vehicle(x, y, dna) {
     this.acceleration = createVector(0, 0);
     this.velocity = createVector(0, -2);
     this.position = createVector(x, y);
-    this.maxspeed = 16; //8
-    this.maxforce = 0.8; //0.4
+    this.maxspeed = 32; //8
+    this.maxforce = 1.6; //0.4
     this.r = 4;
     this.health = 1;
     this.dna = [];
     if (dna === undefined) {
 
-        this.dna[0] = random(-2, 2);
-        this.dna[1] = random(-2, 2);
-        this.dna[2] = random(0, 100);
-        this.dna[3] = random(0, 100);
+        this.dna[0] = random(-2, 4);//-2 2
+        this.dna[1] = random(-2, 4);//-2 2
+        this.dna[2] = random(0, 100);//0 100
+        this.dna[3] = random(0, 100);//0 100
     }
     else {
         this.dna[0] = dna[0];
@@ -24,8 +24,8 @@ function Vehicle(x, y, dna) {
     }
     this.update = () => {
         this.health -= 0.001;
-        this.velocity.add((this.acceleration)*2);
-        this.velocity.limit((this.maxspeed)*2);
+        this.velocity.add(this.acceleration);
+        this.velocity.limit(this.maxspeed);
         this.position.add(this.velocity);
         this.acceleration.mult(0);
     }
