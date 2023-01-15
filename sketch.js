@@ -2,7 +2,7 @@ let Frames=0;
 let debug=0;
 let gen=1;
 let pause=0;
-let framesinc=1;
+let framesinc=2;
 let Data=[];
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -33,7 +33,7 @@ function draw() {
     displayFood();
 
     Frames+=framesinc;
-    if (Frames==400)
+    if (Frames==200)
     {
         Frames=0;
         gen+=1;
