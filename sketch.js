@@ -33,7 +33,7 @@ function draw() {
     displayFood();
 
     Frames+=framesinc;
-    if (Frames==800)
+    if (Frames==400)
     {
         Frames=0;
         gen+=1;
@@ -51,7 +51,7 @@ function draw() {
         removeVehicles(pool);
         removeParticles();
         initParticles();
-        if (gen==31)
+        if (gen==61)
         {
             noLoop();
             init_graph();
