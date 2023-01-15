@@ -1,7 +1,7 @@
 let food = [];
 let poison = [];
 let foodNum = 100;
-let poisNum = 100;
+let poisNum = 200;
 
 function initParticles(){
     for (let i = 0; i < foodNum; i++) {
