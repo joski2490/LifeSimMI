@@ -4,8 +4,8 @@ function Vehicle(x, y, dna) {
     this.acceleration = createVector(0, 0);
     this.velocity = createVector(0, -2);
     this.position = createVector(x, y);
-    this.maxspeed = 8; //8
-    this.maxforce = 0.4; //0.4
+    this.maxspeed = 16; //8
+    this.maxforce = 1.2; //0.4
     this.r = 4;
     this.health = 1;
     this.dna = [];
@@ -30,8 +30,8 @@ function Vehicle(x, y, dna) {
         this.acceleration.mult(0);
     }
     this.behaviors = (good, bad) => {
-        let steerG = this.eat(good, 0.2, this.dna[2]);
-        let steerB = this.eat(bad, -1.5, this.dna[3]);
+        let steerG = this.eat(good, 1.5, this.dna[2]);//0.2
+        let steerB = this.eat(bad, -1.5, this.dna[3]);//-1.5
 
         steerG.mult(this.dna[0]);
         steerB.mult(this.dna[1]);
@@ -79,7 +79,7 @@ function Vehicle(x, y, dna) {
 
     }
     this.applyForce = (force) => {
-        this.acceleration.add(force);
+        this.acceleration.add(force*2);//force
     }
 
     this.seek = (target) => {
